@@ -19,7 +19,7 @@ function buildMetadata(sample) {
       panel.append("p").text(`${key}: ${value}`);
     });
   });
-
+}
 // function to build both charts
 function buildCharts(sample) {
   d3.json("https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json").then((data) => {
@@ -28,7 +28,7 @@ function buildCharts(sample) {
     const samples = data.samples;
 
     // Filter the samples for the object with the desired sample number
-    const result = samples.find(obj => obj.id == samples);
+    const result = samples.find(obj => obj.id == sample);
 
     // Get the otu_ids, otu_labels, and sample_values
     const otu_ids = result.otu_ids;
@@ -118,4 +118,4 @@ function optionChanged(newSample) {
 // Initialize the dashboard
 init();
 
-}
+
